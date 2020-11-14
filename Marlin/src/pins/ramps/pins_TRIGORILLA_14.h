@@ -56,8 +56,8 @@
   #define FIL_RUNOUT_PIN                      19
   #define BEEPER_PIN                          31
   #define SD_DETECT_PIN                       49
-  #define PS_ON_PIN                           12
-  #define KILL_PIN                            11
+  //#define PS_ON_PIN                           12
+  //#define KILL_PIN                            11
   #define SDSS                                53
 
 //
