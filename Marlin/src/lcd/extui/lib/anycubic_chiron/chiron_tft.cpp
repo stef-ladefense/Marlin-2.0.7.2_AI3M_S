@@ -40,6 +40,9 @@
 #include "../../../../sd/cardreader.h"
 #include "../../../../libs/numtostr.h"
 #include "../../../../MarlinCore.h"
+
+using namespace ExtUI;
+
 namespace Anycubic {
 
   printer_state_t  ChironTFT::printer_state;

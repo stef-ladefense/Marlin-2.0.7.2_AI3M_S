@@ -144,17 +144,17 @@
 #endif
 
 // Define for Drivers installed (Comment for stock drivers). See line 720 for type
-#define TMC_INSTALLED
+//#define TMC_INSTALLED
 
 // Inverse motors connectors. Comment for stock drivers or uncomment for TMC2xxx
-#define INVERT_STEEPER_DIR
-#define INVERT_EXTRUDER_DIR
+//#define INVERT_STEEPER_DIR
+//#define INVERT_EXTRUDER_DIR
 
 // Define for S version of I3MEGA with new Extruder or upgrade
 #define I3MEGA_HAS_NEW_EXTRUDER
 
 // Define if you have BLTOUCH (the SERVO0_PIN is define by MOTHERBOARD type (BOARD_TRIGORILLA_14 or BOARD_TRIGORILLA_14_11)
-#define I3MEGA_HAS_BLTOUCH
+//#define I3MEGA_HAS_BLTOUCH
 
 // Define bed printing size (with no extra, print size is 210)
 #define BED_SIZE 220
@@ -165,6 +165,7 @@
 
 // Touch-screen LCD for I3MEGA printers
 #define ANYCUBIC_LCD_I3MEGA
+//#define ANYCUBIC_LCD_CHIRON
 #define LCD_SERIAL_PORT 3  // Default is 3 for I3MEGA NOT CHANGE THIS !!!
 //#define ANYCUBIC_LCD_DEBUG
 
@@ -363,7 +364,7 @@
  * Enable and connect the power supply to the PS_ON_PIN.
  * Specify whether the power supply is active HIGH or active LOW.
  */
-#define PSU_CONTROL
+//#define PSU_CONTROL
 //#define PSU_NAME "Power Supply"
 
 #if ENABLED(PSU_CONTROL)
@@ -1052,7 +1053,7 @@
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 10
+#define PROBING_MARGIN 20
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_SPEED (133*60)
@@ -1072,8 +1073,8 @@
  * A total of 2 does fast/slow probes with a weighted average.
  * A total of 3 or more adds more slow probes, taking the average.
  */
-//#define MULTIPLE_PROBING 2
-//#define EXTRA_PROBING    1
+#define MULTIPLE_PROBING 2
+//#define EXTRA_PROBING 1
 
 /**
  * Z probes require clearance when deploying, stowing, and moving between

@@ -1603,7 +1603,7 @@
  *
  * Warning: Does not respect endstops!
  */
-//#define BABYSTEPPING
+#define BABYSTEPPING
 #if ENABLED(BABYSTEPPING)
   //#define INTEGRATED_BABYSTEPPING         // EXPERIMENTAL integration of babystepping into the Stepper ISR
   //#define BABYSTEP_WITHOUT_HOMING
@@ -2434,11 +2434,11 @@
    */
 
   #define  X_SLAVE_ADDRESS 0
-  #define  Y_SLAVE_ADDRESS 1
-  #define E0_SLAVE_ADDRESS 2
-  
+  #define  Y_SLAVE_ADDRESS 3
+
   #define  Z_SLAVE_ADDRESS 0
   #define Z2_SLAVE_ADDRESS 1
+  #define E0_SLAVE_ADDRESS 3
 
   #define X2_SLAVE_ADDRESS 0
   #define Y2_SLAVE_ADDRESS 0
@@ -2462,8 +2462,8 @@
   //#define X_SERIAL_RX_PIN    11 // lt interrupt Rx pin 11
   //#define Y_SERIAL_TX_PIN    11
   //#define Y_SERIAL_RX_PIN    11 // lt interrupt Rx pin 11
-  //#define E0_SERIAL_TX_PIN   11
-  //#define E0_SERIAL_RX_PIN   11 // lt interrupt Rx pin 11 
+  //#define E0_SERIAL_TX_PIN   12
+  //#define E0_SERIAL_RX_PIN   12 // lt interrupt Rx pin 11 
   //#define Z_SERIAL_TX_PIN    12
   //#define Z_SERIAL_RX_PIN    12 // lt interrupt Rx pin 12
   //#define Z2_SERIAL_TX_PIN   12

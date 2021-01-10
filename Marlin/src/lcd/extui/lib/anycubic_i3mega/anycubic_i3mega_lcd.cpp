@@ -37,6 +37,7 @@
 #define SEND_PGM_VAL(x,y)                           (send_P(PSTR(x)), sendLine(i16tostr3rj(y)))
 #define SEND(x)                                     send(x)
 #define SENDLINE(x)                                 sendLine(x)
+#define SENDSPACE()                                 (LCD_SERIAL.write(' '))
 #if ENABLED(ANYCUBIC_LCD_DEBUG)
   #define SENDLINE_DBG_PGM(x,y)                     (sendLine_P(PSTR(x)), SERIAL_ECHOLNPGM(y))
   #define SENDLINE_DBG_PGM_VAL(x,y,z)               (sendLine_P(PSTR(x)), SERIAL_ECHOPGM(y), SERIAL_ECHOLN(z))
@@ -648,11 +649,17 @@ void AnycubicTFTClass::GetCommandFromTFT() {
             float xPostition = ExtUI::getAxisPosition_mm(ExtUI::X);
             float yPostition = ExtUI::getAxisPosition_mm(ExtUI::Y);
             float zPostition = ExtUI::getAxisPosition_mm(ExtUI::Z);
-            SEND_PGM("A5V X: ");
+            SEND_PGM("A5V");
+            SENDSPACE();
+            SEND_PGM("X: ");
             LCD_SERIAL.print(xPostition);
-            SEND_PGM(" Y: ");
+            SENDSPACE();
+            SEND_PGM("Y:");
+            SENDSPACE();
             LCD_SERIAL.print(yPostition);
-            SEND_PGM(" Z: ");
+            SENDSPACE();
+            SEND_PGM("Z:");
+            SENDSPACE();
             LCD_SERIAL.print(zPostition);
             SENDLINE_PGM("");
           } break;
@@ -676,9 +683,12 @@ void AnycubicTFTClass::GetCommandFromTFT() {
             SEND_PGM("A7V ");
             if (elapsedMinutes != 0) {  // print time
               SEND(ui8tostr2(elapsedMinutes / 60));
-              SEND_PGM(" H ");
+              SENDSPACE();
+              SEND_PGM("H");
+              SENDSPACE();
               SEND(ui8tostr2(elapsedMinutes % 60));
-              SENDLINE_PGM(" M");
+              SENDSPACE();
+              SENDLINE_PGM("M");
             }
             else
               SENDLINE_PGM(" 999:999");
